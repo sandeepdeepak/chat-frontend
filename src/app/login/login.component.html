@@ -1,0 +1,66 @@
+<div id="whole-page">
+  <div id="inside-container">
+    <div class="row h-100">
+      <div class="col-6 p-5 d-flex flex-column">
+        <div class="chat-header ml-5">
+          <img
+            class="chat-logo mr-2"
+            src="../../assets/images/chat-logo.png"
+          />SAN Chat
+        </div>
+        <div class="mt-4 ml-5 stay-in-touch">
+          STAY IN TOUCH TO STAY CONNECTED
+        </div>
+        <div class="chat-for-work ml-5 w-75">Chat that's built for work</div>
+        <div class="mt-5 text-center">
+          <img
+            class="people-chat-image"
+            src="../../assets/images/people-chat.png"
+          />
+        </div>
+      </div>
+
+      <div class="col-6 p-5 d-flex flex-column">
+        <div class="sign-in">Sign in</div>
+        <div class="sign-in-para mt-2 mb-5">Enter your details below</div>
+        <div class="input-header">EMAIL ADDRESS</div>
+        <div class="mt-2 mb-4">
+          <input
+            class="input-box w-75"
+            placeholder="name@domain.com"
+            autocomplete="off"
+            [(ngModel)]="loginModel.email"
+          />
+        </div>
+        <div class="input-header">PASSWORD</div>
+        <div class="mt-2 mb-4">
+          <input
+            class="input-box w-75"
+            type="password"
+            placeholder="Enter your password"
+            autocomplete="off"
+            [(ngModel)]="loginModel.password"
+          />
+        </div>
+        <div class="w-75 pr-5">
+          <p class="terms">
+            By clicking sign in, you agree to our
+            <span class="terms-colored">Terms & Conditions</span> and
+            <span class="terms-colored">Private policy</span>
+          </p>
+        </div>
+        <div>
+          <button mat-raised-button class="login-button" (click)="login()">
+            Sign in
+          </button>
+        </div>
+        <div class="mt-4">
+          <p class="to-sign-up">
+            Don't have an account?
+            <span class="to-sign-up-colored">Sign up</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

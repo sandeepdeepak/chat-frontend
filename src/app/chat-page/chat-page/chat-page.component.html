@@ -1,0 +1,115 @@
+<div id="whole-page">
+    <div class="row w-100 h-100">
+        <div class="col-3 " id="sidenav">
+            <div class="row mt-4">
+                <div class="col-3 text-center">
+                    <img class="round-image" src="./../../../assets/images/dims.jpeg">
+                </div>
+                <div class="col-8">
+                    <div class="name">Bohdan Kononets</div>
+                    <div class="available d-flex flex-row">
+                        <div>
+                            Available
+                        </div>
+                        <div class="round-green-color ml-2"> </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-12 text-center">
+                    <div class="text-background ml-2">
+                        <input placeholder="Search for people and groups" class="search-input">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-8 pl-5 pb-3 pt-5">
+                    <div class="name">Favourites</div>
+                </div>
+                <div class="col fav-icon-list">
+                    <button mat-icon-button class="mr-3 white-icon">
+                        <mat-icon>call</mat-icon>
+                    </button>
+                    <button mat-icon-button class="white-icon">
+                        <mat-icon>add_circle_outline</mat-icon>
+                    </button>
+                </div>
+            </div>
+            <div class="row ml-4 scrollmenu">
+                <img class="round-image m-2" src="./../../../assets/images/dims.jpeg">
+                <img class="round-image m-2" src="./../../../assets/images/dims.jpeg">
+                <img class="round-image m-2" src="./../../../assets/images/dims.jpeg">
+                <img class="round-image m-2" src="./../../../assets/images/dims.jpeg">
+                <img class="round-image m-2" src="./../../../assets/images/dims.jpeg">
+                <img class="round-image m-2" src="./../../../assets/images/dims.jpeg">
+                <img class="round-image m-2" src="./../../../assets/images/dims.jpeg">
+            </div>
+            <div class="row">
+                <div class="col-8 pl-5 pb-3 pt-5">
+                    <div class="name">Today</div>
+                </div>
+            </div>
+            <div class="row mt-4" *ngFor="let chatPerson of chatList">
+                <div class="col-3 text-right">
+                    <img class="round-image" src="./../../../assets/images/dims.jpeg">
+                </div>
+                <div class="col-6">
+                    <div class="name">{{chatPerson.name}}</div>
+                    <div class="available d-flex flex-row">
+                        <div>
+                            {{chatPerson.lastMsg}}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 text-right pr-4">
+                    <div class="round-green-color">
+                    </div>
+                    <div class="mt-1 last-seen">{{chatPerson.lastSeen}}</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-9" id="right-chat-part">
+            <div class="row mt-5">
+                <div class="col-3 text-center mt-1">
+                    <img class="round-larger-image" src="./../../../assets/images/dims.jpeg">
+                </div>
+                <div class="col-6 text-center">
+                    <div class="chat-page-name">Bohdan Kononets</div>
+                    <div class="location"><span class="locatoin-span">Listbon,</span> Portugal 11:00 PM</div>
+                </div>
+                <div class="col text-center mt-1">
+                    <button mat-icon-button class="mr-5 chat-icon-large">
+                        <mat-icon style="font-size: 2em;">videocam</mat-icon>
+                    </button>
+                    <button mat-icon-button class="chat-icon-large">
+                        <mat-icon style="font-size: 2em;">call</mat-icon>
+                    </button>
+                </div>
+            </div>
+            <mat-divider class="mt-3 mb-5" [inset]="true"></mat-divider>
+            <div class="row">
+                <div class="col-1 text-right">
+                    <img class="round-image" src="./../../../assets/images/dims.jpeg">
+                </div>
+                <div class="col-6">
+                    <div class="chat-other-box">
+                        <p>Ola Jamie !
+                            We are glad to receive your message.It is our pleasure to talk with you.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6"></div>
+                <div class="col-6">
+                    <div class="chat-box">
+                        <p>Ola Jamie !
+                            We are glad to receive your message.It is our pleasure to talk with you.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

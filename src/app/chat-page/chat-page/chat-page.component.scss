@@ -1,0 +1,115 @@
+#whole-page{
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    background-color: #e9f2f6;
+}
+#sidenav{
+    background-color: #53b0d1;
+}
+.round-image{
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+}
+.round-larger-image{
+    width: 4em;
+    height: 4em;
+    border-radius: 50%;
+}
+.name{
+    font-size: 1.2em;
+    color: white;
+    font-weight: 500;
+}
+.available{
+    font-size: 1em;
+    color: white;
+    font-weight: 300;
+}
+.round-green-color{
+    border-radius: 50%;
+    background-color: #bce034;
+    width: 10px;
+    height: 10px;
+    margin-top: 7px;
+    margin-left: 4em;
+}
+.search-input{
+    border: none;
+    height: 3em;
+    width: 20em;
+    padding-left: 3em;
+    color: white;
+    background: url(./../../../assets/images/search-icon.png) no-repeat scroll 7px 10px;
+    background-size: 30px 30px;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #7dc9e6;
+    opacity: 1; /* Firefox */
+}
+.text-background{
+    background-color: #3e9dbd;
+    border-radius: 5em;
+}
+.fav-icon-list{
+    padding-top: 2.4em;
+}
+.white-icon{
+    color: white;
+}
+.scrollmenu {
+    max-width: 98%;
+    overflow: auto;
+    white-space: nowrap;
+}
+  
+.scrollmenu {
+    display: inline-block;
+}
+.scrollmenu::-webkit-scrollbar {
+    display: none;
+}
+.last-seen{
+    color: #156988;
+}
+.chat-page-name{
+    font-size: 1.5em;
+    color: black;
+    font-weight: 400;
+}
+.location{
+    font-size: 1.5em;
+    color: #74abbc;
+    font-weight:400;
+}
+.locatoin-span{
+    color: #9db1bb;
+}
+.chat-icon-large{
+    color: white;
+    background-color: #54b0d1;
+    width: 4em;
+    height: 4em;
+    border-radius: 50%;
+}
+.chat-box{
+    background-color: #769dae;
+    padding: 2em;
+    margin: 0em 5em;
+    border-radius: 1em;
+    font-size: 1.2em;
+    color: white;
+    font-weight: 100;
+}
+.chat-other-box{
+    background-color: white;
+    padding: 2em;
+    margin-right: 5em;
+    border-radius: 1em;
+    font-size: 1.2em;
+    color: black;
+    font-weight: 400;
+}

@@ -8,6 +8,10 @@ const routes: Routes = [
     component: LoginComponent
   },
   {
+    path: 'chat-page',
+    loadChildren: './chat-page/chat-page.module#ChatPageModule'
+  },
+  {
     path: '**',
     redirectTo: 'login'
   }

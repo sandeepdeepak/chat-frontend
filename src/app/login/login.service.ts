@@ -8,4 +8,8 @@ export class LoginService {
   loginService(postData) {
     return this.http.post("http://localhost:3000/users/login", postData);
   }
+
+  signupService(postData) {
+    return this.http.post("http://localhost:3000/users/signup", postData);
+  }
 }

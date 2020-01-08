@@ -3,44 +3,36 @@
     <div class="row h-100">
       <div class="col-6 p-5 d-flex flex-column">
         <div class="chat-header ml-5">
-          <img
-            class="chat-logo mr-2"
-            src="../../assets/images/chat-logo.png"
-          />SAN Chat
+          <img class="chat-logo mr-2" src="../../assets/images/chat-logo.png" />SAN Chat
         </div>
         <div class="mt-4 ml-5 stay-in-touch">
           STAY IN TOUCH TO STAY CONNECTED
         </div>
         <div class="chat-for-work ml-5 w-75">Chat that's built for work</div>
         <div class="mt-5 text-center">
-          <img
-            class="people-chat-image"
-            src="../../assets/images/people-chat.png"
-          />
+          <img class="people-chat-image" src="../../assets/images/people-chat.png" />
         </div>
       </div>
 
       <div class="col-6 p-5 d-flex flex-column">
-        <div class="sign-in">Sign in</div>
+        <div class="sign-in" *ngIf="signText == 'Sign up'">Sign in</div>
+        <div class="sign-in" *ngIf="signText == 'Sign in'">Sign up</div>
         <div class="sign-in-para mt-2 mb-5">Enter your details below</div>
+        <ng-container *ngIf="signText == 'Sign in'">
+          <div class="input-header">USER NAME</div>
+          <div class="mt-2 mb-4">
+            <input class="input-box w-75" placeholder="Sandy mass" autocomplete="off" [(ngModel)]="loginModel.name" />
+          </div>
+        </ng-container>
         <div class="input-header">EMAIL ADDRESS</div>
         <div class="mt-2 mb-4">
-          <input
-            class="input-box w-75"
-            placeholder="name@domain.com"
-            autocomplete="off"
-            [(ngModel)]="loginModel.email"
-          />
+          <input class="input-box w-75" placeholder="name@domain.com" autocomplete="off"
+            [(ngModel)]="loginModel.email" />
         </div>
         <div class="input-header">PASSWORD</div>
         <div class="mt-2 mb-4">
-          <input
-            class="input-box w-75"
-            type="password"
-            placeholder="Enter your password"
-            autocomplete="off"
-            [(ngModel)]="loginModel.password"
-          />
+          <input class="input-box w-75" type="password" placeholder="Enter your password" autocomplete="off"
+            [(ngModel)]="loginModel.password" />
         </div>
         <div class="w-75 pr-5">
           <p class="terms">
@@ -50,14 +42,17 @@
           </p>
         </div>
         <div>
-          <button mat-raised-button class="login-button" (click)="login()">
+          <button mat-raised-button class="login-button" (click)="login()" *ngIf="signText == 'Sign up'">
             Sign in
+          </button>
+          <button mat-raised-button class="login-button" (click)="signup()" *ngIf="signText == 'Sign in'">
+            Sign up
           </button>
         </div>
         <div class="mt-4">
           <p class="to-sign-up">
             Don't have an account?
-            <span class="to-sign-up-colored">Sign up</span>
+            <span class="to-sign-up-colored" (click)="changeSignText()">{{signText}}</span>
           </p>
         </div>
       </div>

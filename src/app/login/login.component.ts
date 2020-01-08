@@ -2,6 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import { LoginService } from "./login.service";
 import { LoginModel } from "./login.model";
 import { MatSnackBar } from "@angular/material";
+import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: "app-login",
@@ -11,17 +13,30 @@ import { MatSnackBar } from "@angular/material";
 })
 export class LoginComponent implements OnInit {
   loginModel = new LoginModel();
+  signText = 'Sign up';
   constructor(
     private loginServ: LoginService,
-    private _snackBar: MatSnackBar
-  ) {}
+    private _snackBar: MatSnackBar,
+    private router: Router,
+    private cookieService: CookieService
+  ) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   login() {
-    this.loginServ.loginService(this.loginModel).subscribe(res => {
+    this.loginServ.loginService(this.loginModel).subscribe((res: any) => {
       console.log(res);
       this.openSnackBar("Logged in Successfully", "Dismiss", 3000);
+      localStorage.setItem('user', JSON.stringify(res.user));
+      this.cookieService.set('SESSIONID',res.token);
+      this.router.navigate(['/chat-page']);
+    });
+  }
+
+  signup() {
+    this.loginServ.signupService(this.loginModel).subscribe(res => {
+      console.log(res);
+      this.openSnackBar("Sign up successfully", "Dismiss", 3000);
     });
   }
 
@@ -31,5 +46,14 @@ export class LoginComponent implements OnInit {
       horizontalPosition: "center"
       // verticalPosition: "top"
     });
+  }
+
+  changeSignText() {
+    if (this.signText == 'Sign up') {
+      this.signText = 'Sign in'
+    }
+    else {
+      this.signText = 'Sign up'
+    }
   }
 }
